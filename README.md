@@ -34,6 +34,7 @@ A first pilot: Claude Opus 5.5, five tasks, three runs per task and arm, 45 runs
 | Trap tasks passed | 9 / 12 | 12 / 12 | 12 / 12 |
 | Cost per correct result (trap tasks) | $0.286 | $0.327 | $0.242 |
 | Mean time per trap run | 88 s | 121 s | 89 s |
+| Mean tokens per trap run | 228,609 | 352,342 | 248,823 |
 | Typo task (C1) cost per run | $0.082 | $0.123 | $0.086 |
 
 Against the rules fixed before the first run:
@@ -51,7 +52,8 @@ What this shows and what it does not:
 - **The other three traps passed in every arm.** Opus 5.5 already avoids them, as the pre-registration said it might.
 - **Rule 1 landed exactly on its threshold**, so one more failure with the skill or one more success without it would have flipped it. Separately, a code review before scoring found that the summary script's floating-point arithmetic could read some exact 25-point gaps (8/12 against 5/12) as 24.999 and fail them; the pilot's gap (12/12 against 9/12) is not one of them. The fix was hashed at 16:48 UTC, before the script first read pilot results ([`bench/FROZEN.sha256`](bench/FROZEN.sha256)).
 - **The header is mostly invisible in the logs.** Opus 5.5's reasoning is hidden in the event stream, so "header written" counts only headers in visible text or files: B loaded the skill in 12 of 12 trap runs, and a visible header appears in 1.
-- **Cost:** on trap tasks, B costs about 50% more per run than A and 14% more per correct result. B' costs 13% more per run and 15% less per correct result.
+- **Cost:** on trap tasks, B costs about 50% more per run than A and 14% more per correct result. B' costs 13% more per run and 15% less per correct result. Tokens follow the same pattern (B 1.54x A per run, B' 1.09x); most of each count is cached input re-read on every turn, so cost is the better guide.
+- **Not significant yet.** With 9 of 12 against 12 of 12, a one-sided Fisher exact test gives p = 0.11. Three runs per cell cannot separate a real effect from chance.
 
 So far: a pilot on one strong model with three runs per cell. It is consistent with the skill catching the "fixed the symptom, left the cause" miss at a modest cost. It does not show the skill is needed for the other three traps on this model, and asking for it on a trivial task wastes about half the cost again. Next: harder tasks for strong models, smaller models, and other agents.
 
