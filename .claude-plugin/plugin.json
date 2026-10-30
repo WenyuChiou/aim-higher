@@ -1,0 +1,19 @@
+{
+  "name": "aim-higher",
+  "description": "Before planning non-trivial work, write an 8-line plan header that aims at the outcome above the task and names how the result will be checked.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Wenyu Chiou"
+  },
+  "homepage": "https://github.com/WenyuChiou/aim-higher",
+  "repository": "https://github.com/WenyuChiou/aim-higher",
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "agent-skills",
+    "ambition",
+    "premortem",
+    "acceptance-criteria",
+    "coding-agents"
+  ]
+}

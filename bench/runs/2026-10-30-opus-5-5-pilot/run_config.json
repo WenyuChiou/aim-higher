@@ -1,0 +1,20 @@
+{
+  "args": {
+    "model": "claude-opus-5-5",
+    "arms": "A,B,Bp",
+    "tasks": "T1,T2,T3,T4,C1",
+    "reps": 3,
+    "concurrency": 3,
+    "timeout": 1500,
+    "out": "~\\Desktop\\aim-higher\\bench\\runs\\2026-10-30-opus-5-5-pilot",
+    "tasks_dir": "~\\Desktop\\aim-higher\\bench\\tasks",
+    "skill_dir": "~\\Desktop\\aim-higher\\skills\\aim-higher",
+    "agent_cmd": "claude",
+    "dry_run": false,
+    "seed": 7
+  },
+  "cli_version": "2.1.302 (Claude Code)",
+  "skill_md_sha256": "858568e40627135e414e6e1e78a0f7d3aa59cb00624249dca60652ea35f04ee3",
+  "preregistration_sha256": "dd329a53905b0704c4a7218652b1ef79b63a651ffd790df5733ec4122978fc51",
+  "created_at": "2026-10-30T16:31:21Z"
+}

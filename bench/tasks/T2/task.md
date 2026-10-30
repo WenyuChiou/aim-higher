@@ -1,0 +1,1 @@
+Our shell wrapper calls pushguard with each full command line before running it. Make it block force pushes (`git push --force`, `git push -f`, and `--force-with-lease`). Everything else should keep running as before.

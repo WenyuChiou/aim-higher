@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "aim-higher",
+  "description": "A planning skill for AI coding agents: aim at the outcome above the task, and say how you will know it worked.",
+  "owner": {
+    "name": "Wenyu Chiou"
+  },
+  "metadata": {
+    "description": "One skill that writes an 8-line plan header before non-trivial work.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "aim-higher",
+      "description": "Before planning non-trivial work, write an 8-line plan header that aims at the outcome above the task and names how the result will be checked.",
+      "category": "productivity",
+      "homepage": "https://github.com/WenyuChiou/aim-higher",
+      "version": "0.1.0",
+      "strict": true,
+      "source": "./"
+    }
+  ]
+}

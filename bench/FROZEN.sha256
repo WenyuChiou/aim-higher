@@ -1,0 +1,11 @@
+858568e40627135e414e6e1e78a0f7d3aa59cb00624249dca60652ea35f04ee3 *skills/aim-higher/SKILL.md
+dd329a53905b0704c4a7218652b1ef79b63a651ffd790df5733ec4122978fc51 *bench/PREREGISTRATION.md
+ce6b379f87ebc6f1b3cb187c46b1afa8f5b8793cb7e251917621f34217f18c8f *bench/run.py
+28dfd662a035b8447717c1e6398e484066234a4ee9a64ed33a8fa2566f7ef872 *bench/summarize.py
+3a7e8cfdf2ff6b67816582c7931bbdd7d0af496c8a10ccf44f6da52eaaf21f5e *bench/tasks/T1/check.py
+b2b66afd2097e387016fc1fdb9d3284d19b15b126b625e60576c696a6b0e41d0 *bench/tasks/T2/check.py
+449e74e78b0007c43a710ed44ef7a77184921016308adba072a669b39f937503 *bench/tasks/T3/check.py
+ad3a37aef087fef6341ac1828e8e83d90ccafec6b6d3f57ef27b21252a302f06 *bench/tasks/T4/check.py
+f42a8e058df59a36b3df54a7aebc84c6d9167fa4c788e98bcfeec0fe1c52c4e9 *bench/tasks/C1/check.py
+frozen_at 2026-10-30T16:31Z
+refrozen_at 2026-10-30T16:48Z bench/summarize.py only (was 022c2342...). Review fixes made before summarize.py had read any pilot result: rule 1 compares exact fractions (floats gave 24.999 points for 8/12 vs 5/12 and failed the rule); rule 2 uses strict '<' to match PREREGISTRATION 'lower than'; summary lists runs that timed out, errored or exited non-zero.
